@@ -1,61 +1,47 @@
-/**
- * HillClimbers move two steps across for each step of rise
- * 
-* @author <Alex Gandhi>
-* @version <18/11/14>
- * 
- */
-
 import edu.fcps.karel2.Display;
 import edu.fcps.karel2.Robot;
 
-public class HillClimber extends Climber 
+public class Climber extends Athlete 
 {
-   public HillClimber()
+   public Climber()
   {
    super(8, 1, Display.NORTH, 1);
   }
-   public HillClimber(int x, int y, int dir, int beep)
+   public Climber(int x, int y, int dir, int beep)
   {
    super(x, y, dir, beep);
   }
-  
    public void climbUpLeft()
   {
    turnRight();
    move();
+   move();
    turnLeft();
    move();
-   move();
   }
-  
    public void climbDownLeft()
   {
    move();
-   move();
    turnLeft();
+   move();
    move();
    turnRight();
   }
-  
    public void climbUpRight()
   {
    turnLeft();
    move();
+   move();
    turnRight();
    move();
-   move();
   }
-  
    public void climbDownRight()
   {
    move();
+   turnRight(); 
    move();
-   turnRight();
    move();
    turnLeft();
   }
   
 }
-
-

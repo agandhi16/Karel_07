@@ -1,31 +1,54 @@
 /**
  * StepClimbers climb steeply rising mountains, one step across for every step of rise
  * 
-* @author <...>
-* @version <...>
+* @author <Alex Gandhi>
+* @version <18/11/14>
  * 
  */
 import edu.fcps.karel2.Display;
+import edu.fcps.karel2.Robot;
 
-public class StepClimber extends Climber {
-
-	public StepClimber(int x) {
-		//TODO Call the appropriate superclass constructor
-	}
-	
-	public void climbUpRight() {
-		//TODO Climb one step up and one across
-	}
-	
-	public void climbUpLeft() {
-		//TODO Climb one step up and one across
-	}
-	
-	public void climbDownRight() {
-		//TODO Climb one step down and one across
-	}
-	
-	public void climbDownLeft() {
-		//TODO Climb one step down and one across
-	}
+public class StepClimber extends Climber 
+{
+   public StepClimber()
+  {
+   super(8, 1, Display.NORTH, 1);
+  }
+   public StepClimber(int x, int y, int dir, int beep)
+  {
+   super(x, y, dir, beep);
+  }
+   
+   public void climbUpLeft()
+  {
+   turnRight();
+   move();
+   turnLeft();
+   move();
+  }
+  
+   public void climbDownLeft()
+  {
+   move();
+   turnLeft();
+   move();
+   turnRight();
+  }
+  
+   public void climbUpRight()
+  {
+   turnLeft();
+   move();
+   turnRight();
+   move();
+  }
+  
+   public void climbDownRight()
+  {
+   move();
+   turnRight();
+   move();
+   turnLeft();
+  }
+  
 }
